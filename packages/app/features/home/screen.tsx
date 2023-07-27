@@ -19,8 +19,9 @@ import {
 } from '@my/ui'
 import { ArrowRight, DollarSign, Edit2, User, Users } from '@tamagui/lucide-icons'
 import { useUser } from 'app/utils/useUser'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useLink } from 'solito/link'
+import { Platform } from 'react-native'
 
 const defaultAuthors = [
   {
@@ -36,6 +37,12 @@ const defaultAuthors = [
 ]
 
 export function HomeScreen() {
+  
+  useEffect(()=> {
+    const os = Platform.OS
+    console.log('App running on: ', os)
+  },[])
+  
   return (
     <XStack maw={1480} als="center" f={1}>
       <ScrollView f={3} fb={0}>
@@ -120,7 +127,7 @@ const AchievementsSection = () => {
   return (
     <YStack gap="$4">
       <XStack px="$4.5" ai="center" gap="$2" jc="space-between" mb="$4">
-        <H4 fontWeight="400">Getting Started</H4>
+        <H4 fontWeight="400">Welcome</H4>
         <Theme name="alt2">
           <Button size="$2" chromeless {...useLink({ href: '/' })} iconAfter={ArrowRight}>
             All Achievements
@@ -141,7 +148,7 @@ const AchievementsSection = () => {
               }}
               icon={DollarSign}
               title="Make your first 100K"
-              progress={{ current: 81_500, full: 100_000, label: 'dollars made' }}
+              progress={{ current: 81500, full: 100000, label: 'dollars made' }}
               action={{
                 text: 'Boost your sales',
                 props: useLink({ href: '#' }),

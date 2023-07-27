@@ -45,7 +45,11 @@ module.exports = function (api) {
       [
         'transform-inline-environment-variables',
         {
-          include: 'TAMAGUI_TARGET',
+          include: [
+            'TAMAGUI_TARGET',
+            'EXPO_PUBLIC_SUPABASE_URL',
+            'EXPO_PUBLIC_SUPABASE_ANON_KEY'
+          ],
         },
       ],
     ],

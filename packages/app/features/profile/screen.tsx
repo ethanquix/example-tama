@@ -10,16 +10,27 @@ import {
   getTokens,
 } from '@my/ui'
 import { Box, Cog, Milestone, ShoppingCart, Users } from '@tamagui/lucide-icons'
+import { useSupabase } from 'app/utils/supabase/useSupabase'
 import { useSafeAreaInsets } from 'app/utils/useSafeAreaInsets'
 import { useUser } from 'app/utils/useUser'
 import React from 'react'
 import { SolitoImage } from 'solito/image'
 import { Link, useLink } from 'solito/link'
+import { useRouter } from 'solito/router'
 
 export function ProfileScreen() {
   const { profile, avatarUrl } = useUser()
+  
   const name = profile?.name
   const about = profile?.about
+
+  const supabase = useSupabase()
+  const router = useRouter()
+  
+  const onSignOut = async () => {
+    await supabase.auth.signOut()
+    router.replace('/')
+  }
 
   const insets = useSafeAreaInsets()
   return (
@@ -88,6 +99,9 @@ export function ProfileScreen() {
               <Settings.Item {...useLink({ href: '/settings' })} icon={Cog} accentColor="$gray9">
                 Settings
               </Settings.Item>
+              <Settings.Item icon={Cog} accentColor="$gray9" onPress={onSignOut} >
+                Sign out
+              </Settings.Item >
             </Settings.Group>
           </Settings.Items>
         </Settings>

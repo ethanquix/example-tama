@@ -9,7 +9,7 @@ const hostname = NativeModules.SourceCode.scriptURL
   .split(':')[0] // Remove the port
 
 // replace localhost with the hostname - this will not do anything if using a production / remote URL, as they don't contain `localhost`
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!.replace(
+const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL!.replace(
   '://localhost:',
   `://${hostname}:`
 )
@@ -28,7 +28,7 @@ const ExpoSecureStoreAdapter = {
 
 export const supabase = createClient<Database>(
   supabaseUrl,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+  process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY!,
   {
     auth: {
       storage: ExpoSecureStoreAdapter,
