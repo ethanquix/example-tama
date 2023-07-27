@@ -12,7 +12,9 @@
         "buildConfiguration": "Debug"
       },
       "env": {
-        "TAMAGUI_TARGET": "native"
+        "TAMAGUI_TARGET": "native",
+        "EXPO_PUBLIC_SUPABASE_URL": "https://jsveuenvpcqbegilhwrs.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpzdmV1ZW52cGNxYmVnaWxod3JzIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTMzMDQ5NjYsImV4cCI6MTk2ODg4MDk2Nn0.Hcpo9NQaRVt3sBVEtaYquOXDXWnanGZfmymPmipetyI"
       }
     },
     "preview": {
@@ -20,7 +22,9 @@
     },
     "production": {
       "env": {
-        "TAMAGUI_TARGET": "native"
+        "TAMAGUI_TARGET": "native",
+        "EXPO_PUBLIC_SUPABASE_URL": "https://jsveuenvpcqbegilhwrs.supabase.co",
+        "EXPO_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpzdmV1ZW52cGNxYmVnaWxod3JzIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NTMzMDQ5NjYsImV4cCI6MTk2ODg4MDk2Nn0.Hcpo9NQaRVt3sBVEtaYquOXDXWnanGZfmymPmipetyI"
       }
     }
   },
